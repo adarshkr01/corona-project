@@ -61,10 +61,12 @@
 														
 		<tr>
 		<td> <label>Donation<span style="color:red;">:</span></label></td>
-		<td><input type="button" value="Rs.50/-" onclick="PAY"/>
-		<input type="button" value="Rs.150/-" onclick="PAY"/>
-		<input type="button" value="Rs.250/-" onclick="PAY"/></td></tr><br/><br/>	
-		
+		<td><input type="button" value="Rs.50/-" onclick="enableBtn()"/>
+		<input type="button" value="Rs.150/-" onclick="enableBtn()"/>
+		<input type="button" value="Rs.250/-" onclick="enableBtn()"/>	<br /><br />
+		<button id="pay" style="visibility: hidden;">Pay</button>
+		<button id="cancel" style="visibility: hidden;" onclick="return disableBtn()">Cancel</button>
+		</td></tr>
 		<tr>
 			<td colspan="2"><input type="reset"/></td>
 		</tr>
@@ -78,7 +80,18 @@
 		<p align="center"><b>Pure Hardwork by TANU AASTHA. ADIOS!! HASTA PRONTO!</b></p>
 		
 	</div>
+<script>
+function enableBtn() {
+	document.getElementById("pay").style.visibility = "visible";
+	document.getElementById("cancel").style.visibility = "visible";
+}
 
+function disableBtn() {
+	document.getElementById("pay").style.visibility = "hidden";
+	document.getElementById("cancel").style.visibility = "hidden";
+	return false;
+}
+</script>
 </div>
 </body>
 </html>
